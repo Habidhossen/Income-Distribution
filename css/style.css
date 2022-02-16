@@ -1,0 +1,14 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+.header-title {
+  margin: 25px 0;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+  color: #31a5ac;
+}
+.right-part-bg {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
