@@ -1,27 +1,43 @@
 document.getElementById("calculate-btn").addEventListener("click", function () {
-  // select input id
-  const inputFood = document.getElementById("inputFood");
-  const inputRent = document.getElementById("inputRent");
-  const inputClothes = document.getElementById("inputClothes");
+  // select input value
+  const inputIncome = document.getElementById("inputIncome").value;
+  const inputFood = document.getElementById("inputFood").value;
+  const inputRent = document.getElementById("inputRent").value;
+  const inputClothes = document.getElementById("inputClothes").value;
   // get input value & convert to a float value
-  const foodvalue = parseFloat(inputFood.value);
-  const rentValue = parseFloat(inputRent.value);
-  const clothesValue = parseFloat(inputClothes.value);
+  const incomeValue = parseFloat(inputIncome);
+  const foodvalue = parseFloat(inputFood);
+  const rentValue = parseFloat(inputRent);
+  const clothesValue = parseFloat(inputClothes);
   // check condition
   if (
-    inputFood.value == "" ||
-    inputRent.value == "" ||
-    inputClothes.value == ""
+    inputIncome == "" ||
+    inputFood == "" ||
+    inputRent == "" ||
+    inputClothes == ""
   ) {
     console.log("Enter a value");
-  } else if (foodvalue < 0 || rentValue < 0 || clothesValue < 0) {
+  } else if (
+    incomeValue < 0 ||
+    foodvalue < 0 ||
+    rentValue < 0 ||
+    clothesValue < 0
+  ) {
     console.log("Enter a positive value");
   } else {
-    const total = foodvalue + rentValue + clothesValue;
-    console.log(total);
+    const totalExpenses = foodvalue + rentValue + clothesValue;
+    const balance = incomeValue - totalExpenses;
+
+    if (incomeValue < totalExpenses) {
+      console.log("Sorry! You have not enough money");
+    } else {
+      // get total expenses value & set value
+      const totalExpensesValue = document.getElementById("total-expenses");
+      totalExpensesValue.innerText = totalExpenses;
+
+      // get balance value & set value
+      const balanceValue = document.getElementById("balance");
+      balanceValue.innerText = balance;
+    }
   }
-  // clear input
-  inputFood.value = "";
-  inputRent.value = "";
-  inputClothes.value = "";
 });
