@@ -1,14 +1,38 @@
+/* Body Styles */
 body {
   font-family: "Roboto", sans-serif;
 }
+/* Header Title */
 .header-title {
-  margin: 25px 0;
+  padding: 25px 0;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 44px;
   line-height: 59px;
   color: #31a5ac;
 }
+/* Right Banner Bg */
 .right-part-bg {
   background-color: #f8f8f8;
   border-radius: 8px;
+  padding: 15px 100px;
+}
+/* P Tag Customize */
+p {
+  margin: 0 15px;
+}
+/* h5 Tag Customize */
+h5 {
+  font-weight: 500;
+  color: #212529;
+  font-size: 20px;
+  line-height: 26px;
+}
+/* Bootstrap Button Customize */
+.btn {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+/* Bootstrap Form Customize */
+.form-control {
+  background-color: #ebebeb;
 }
