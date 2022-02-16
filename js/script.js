@@ -41,3 +41,20 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     }
   }
 });
+
+// Save Button
+
+document.getElementById("save-btn").addEventListener("click", function () {
+  // select input value
+  const inputIncome = document.getElementById("inputIncome").value;
+  const incomeValue = parseFloat(inputIncome);
+  const inputPercentage = document.getElementById("inputPercentage").value;
+  const percentageValue = parseFloat(inputPercentage);
+
+  //   percentage calculation
+  const savingAmount = (incomeValue * percentageValue) / 100;
+
+  //   set percentage value
+  const savingAmountValue = document.getElementById("saving-amount");
+  savingAmountValue.innerText = savingAmount;
+});
