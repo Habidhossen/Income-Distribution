@@ -16,20 +16,20 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     inputRent == "" ||
     inputClothes == ""
   ) {
-    console.log("Enter a value");
+    document.getElementById("alert-1").style.display = "block";
   } else if (
     incomeValue < 0 ||
     foodvalue < 0 ||
     rentValue < 0 ||
     clothesValue < 0
   ) {
-    console.log("Enter a positive value");
+    document.getElementById("alert-2").style.display = "block";
   } else {
     const totalExpenses = foodvalue + rentValue + clothesValue;
     const balance = incomeValue - totalExpenses;
 
     if (incomeValue < totalExpenses) {
-      console.log("Sorry! You have not enough money");
+      document.getElementById("alert-3").style.display = "block";
     } else {
       // get total expenses value & set value
       const totalExpensesValue = document.getElementById("total-expenses");

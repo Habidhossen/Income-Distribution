@@ -41,6 +41,12 @@ h5 {
   background-color: #ebebeb;
 }
 
+#alert-1,
+#alert-2,
+#alert-3 {
+  display: none;
+}
+
 /* Responsiveness for small devices */
 @media screen and (max-width: 688px) {
   .header-title {
