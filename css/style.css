@@ -10,10 +10,14 @@ body {
   line-height: 59px;
   color: #31a5ac;
 }
+/* Banner image */
+.banner-img {
+  border-radius: 6px;
+}
 /* Right Banner Bg */
 .right-part-bg {
   background-color: #f8f8f8;
-  border-radius: 8px;
+  border-radius: 6px;
   padding: 15px 100px;
 }
 /* P Tag Customize */
@@ -35,4 +39,18 @@ h5 {
 /* Bootstrap Form Customize */
 .form-control {
   background-color: #ebebeb;
+}
+
+/* Responsiveness for small devices */
+@media screen and (max-width: 688px) {
+  .header-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .right-part-bg {
+    padding: 15px 30px;
+  }
+  .form-control {
+    margin-left: 10px;
+  }
 }
