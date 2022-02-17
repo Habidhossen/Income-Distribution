@@ -58,18 +58,23 @@ document.getElementById("save-btn").addEventListener("click", function () {
   } else {
     //   percentage calculation
     const savingAmount = (incomeValue * percentageValue) / 100;
-
-    //   set percentage value
-    const savingAmountValue = document.getElementById("saving-amount");
-    savingAmountValue.innerText = savingAmount;
-
     // get balance value & set value
     const balanceValue = document.getElementById("balance").innerText;
     const balance = parseFloat(balanceValue);
-    const remainingBalance = balance - savingAmount;
 
-    //   set remaining balance value
-    const remainingBalanceValue = document.getElementById("remaining-balance");
-    remainingBalanceValue.innerText = remainingBalance;
+    if (balance < savingAmount) {
+      document.getElementById("alert-3").style.display = "block";
+    } else {
+      //   set percentage value
+      const savingAmountValue = document.getElementById("saving-amount");
+      savingAmountValue.innerText = savingAmount;
+
+      const remainingBalance = balance - savingAmount;
+
+      //   set remaining balance value
+      const remainingBalanceValue =
+        document.getElementById("remaining-balance");
+      remainingBalanceValue.innerText = remainingBalance;
+    }
   }
 });
