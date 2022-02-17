@@ -21,27 +21,20 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const rentValue = parseFloat(inputRent);
   const clothesValue = parseFloat(inputClothes);
   // check condition
-  if (
-    inputIncome == "" ||
-    inputFood == "" ||
-    inputRent == "" ||
-    inputClothes == ""
-  ) {
+  if (inputIncome == "" || inputFood == "" || inputRent == "" || inputClothes == "") {
     alertMessage("alert-1");
-  } else if (
-    incomeValue < 0 ||
-    foodvalue < 0 ||
-    rentValue < 0 ||
-    clothesValue < 0
-  ) {
+  } 
+  else if (incomeValue < 0 || foodvalue < 0 || rentValue < 0 || clothesValue < 0) {
     alertMessage("alert-2");
-  } else {
+  } 
+  else {
     const totalExpenses = foodvalue + rentValue + clothesValue;
     const balance = incomeValue - totalExpenses;
-
+    // check condition
     if (incomeValue < totalExpenses) {
       alertMessage("alert-3");
-    } else {
+    } 
+    else {
       // get total expenses value & set value
       const totalExpensesValue = document.getElementById("total-expenses");
       totalExpensesValue.innerText = totalExpenses;
@@ -63,18 +56,21 @@ document.getElementById("save-btn").addEventListener("click", function () {
   // check condition
   if (inputIncome == "" || inputPercentage == "") {
     alertMessage("alert-1");
-  } else if (incomeValue < 0 || inputPercentage < 0) {
+  } 
+  else if (incomeValue < 0 || inputPercentage < 0) {
     alertMessage("alert-2");
-  } else {
-    // percentage calculation
-    const savingAmount = (incomeValue * percentageValue) / 100;
+  } 
+  else {
     // get balance value & set value
     const balanceValue = document.getElementById("balance").innerText;
     const balance = parseFloat(balanceValue);
-
+    // percentage calculation
+    const savingAmount = (incomeValue * percentageValue) / 100;
+    // check condition
     if (balance < savingAmount) {
       alertMessage("alert-3");
-    } else {
+    } 
+    else {
       // set percentage value
       const savingAmountValue = document.getElementById("saving-amount");
       savingAmountValue.innerText = savingAmount;
