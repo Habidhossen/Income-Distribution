@@ -43,7 +43,6 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 });
 
 // Save Button
-
 document.getElementById("save-btn").addEventListener("click", function () {
   // select input value
   const inputIncome = document.getElementById("inputIncome").value;
@@ -51,19 +50,26 @@ document.getElementById("save-btn").addEventListener("click", function () {
   const inputPercentage = document.getElementById("inputPercentage").value;
   const percentageValue = parseFloat(inputPercentage);
 
-  //   percentage calculation
-  const savingAmount = (incomeValue * percentageValue) / 100;
+  // check condition
+  if (inputIncome == "" || inputPercentage == "") {
+    document.getElementById("alert-1").style.display = "block";
+  } else if (incomeValue < 0 || inputPercentage < 0) {
+    document.getElementById("alert-2").style.display = "block";
+  } else {
+    //   percentage calculation
+    const savingAmount = (incomeValue * percentageValue) / 100;
 
-  //   set percentage value
-  const savingAmountValue = document.getElementById("saving-amount");
-  savingAmountValue.innerText = savingAmount;
+    //   set percentage value
+    const savingAmountValue = document.getElementById("saving-amount");
+    savingAmountValue.innerText = savingAmount;
 
-  // get balance value & set value
-  const balanceValue = document.getElementById("balance").innerText;
-  const balance = parseFloat(balanceValue);
-  const remainingBalance = balance - savingAmount;
+    // get balance value & set value
+    const balanceValue = document.getElementById("balance").innerText;
+    const balance = parseFloat(balanceValue);
+    const remainingBalance = balance - savingAmount;
 
-  //   set remaining balance value
-  const remainingBalanceValue = document.getElementById("remaining-balance");
-  remainingBalanceValue.innerText = remainingBalance;
+    //   set remaining balance value
+    const remainingBalanceValue = document.getElementById("remaining-balance");
+    remainingBalanceValue.innerText = remainingBalance;
+  }
 });

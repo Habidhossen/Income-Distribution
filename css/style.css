@@ -4,7 +4,7 @@ body {
 }
 /* Header Title */
 .header-title {
-  padding: 25px 0;
+  margin-top: 20px;
   font-weight: bold;
   font-size: 44px;
   line-height: 59px;
@@ -50,8 +50,8 @@ h5 {
 /* Responsiveness for small devices */
 @media screen and (max-width: 688px) {
   .header-title {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 30px;
+    line-height: 38px;
   }
   .right-part-bg {
     padding: 15px 30px;
